@@ -1,0 +1,21 @@
+[
+  {
+    "id": "43423424",
+    "title": "Helpful JavaScript Snipets",
+    "tags": ["script", "Programming", "JS"],
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. fringilla sit amet congue eget, tempor ut ex. Duis aliquet et justo eu ultricies. Etiam sit amet pharetra dui."
+  },
+  {
+    "id": "3435324",
+    "title": "Animation Codes",
+    "tags": ["Animation", "transition"],
+    "content": "Consectetur adipiscing elit. fringilla sit amet congue eget, tempor ut ex. Duis aliquet et justo eu ultricies. Etiam sit amet pharetra dui."
+  },
+
+  {
+    "id": "3735324",
+    "title": "Navigation Menu",
+    "tags": ["Nav", "Navigation", "Menu"],
+    "content": "Consectetur adipiscing elit. fringilla sit amet congue eget, tempor ut ex. Duis aliquet et justo eu ultricies. Etiam sit amet pharetra dui."
+  }
+]
