@@ -21,7 +21,7 @@ export default function TextContent() {
       </ul>
       <h5> Future updates:</h5>
       <ul>
-        <li>Connect with WP using RestAPI to fetch WP posts data</li>
+        <li>Connect with WP using RestAPI to fetch WP posts data.</li>
       </ul>
     </div>
   );
