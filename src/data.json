@@ -1,21 +1,26 @@
 [
   {
-    "id": "43423424",
-    "title": "Helpful JavaScript Snipets",
-    "tags": ["script", "Programming", "JS"],
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. fringilla sit amet congue eget, tempor ut ex. Duis aliquet et justo eu ultricies. Etiam sit amet pharetra dui."
+    "id": "87456321",
+    "title": "JavaScript Array Utilities",
+    "tags": ["JavaScript", "Utilities", "Array"],
+    "content": "const uniqueArray = arr => [...new Set(arr)];\n\nconst flattenArray = arr => arr.flat(Infinity);"
   },
   {
-    "id": "3435324",
-    "title": "Animation Codes",
-    "tags": ["Animation", "transition"],
-    "content": "Consectetur adipiscing elit. fringilla sit amet congue eget, tempor ut ex. Duis aliquet et justo eu ultricies. Etiam sit amet pharetra dui."
+    "id": "98456212",
+    "title": "Smooth CSS Hover Effect",
+    "tags": ["CSS", "Hover", "Transition"],
+    "content": ".button {\n  background-color: #4CAF50;\n  transition: background-color 0.3s ease;\n}\n\n.button:hover {\n  background-color: #45a049;\n}"
   },
-
   {
-    "id": "3735324",
-    "title": "Navigation Menu",
-    "tags": ["Nav", "Navigation", "Menu"],
-    "content": "Consectetur adipiscing elit. fringilla sit amet congue eget, tempor ut ex. Duis aliquet et justo eu ultricies. Etiam sit amet pharetra dui."
+    "id": "12546789",
+    "title": "Toggle Dark Mode in JavaScript",
+    "tags": ["JavaScript", "Theme", "DarkMode"],
+    "content": "function toggleDarkMode() {\n  document.body.classList.toggle('dark-mode');\n}"
+  },
+  {
+    "id": "45789654",
+    "title": "CSS Center a Div",
+    "tags": ["CSS", "Center", "Flexbox"],
+    "content": ".center-div {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}"
   }
 ]

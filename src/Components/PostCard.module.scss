@@ -1,16 +1,17 @@
 .card {
-  background-color: rgb(37, 37, 37);
+  position: relative;
+  background-color: var(--secondary-color);
   padding: 25px;
   list-style-type: none;
   margin-bottom: 15px;
   cursor: pointer;
-  border: 1px solid rgb(37, 37, 37);
+  border: 1px solid var(--secondary-color);
   transition: 0.3s ease-in-out;
 }
 
 .selected {
-  border: 1px solid rgb(104, 62, 0);
-  background-color: rgb(104, 62, 0);
+  border: 1px solid var(--priamry-color);
+  background-color: var(--priamry-color);
 }
 
 .title {
@@ -23,4 +24,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.arrow {
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }

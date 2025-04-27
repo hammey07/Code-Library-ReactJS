@@ -1,0 +1,18 @@
+.wrapper {
+  position: relative;
+}
+.searchbox {
+  position: relative;
+  padding: 10px;
+  padding-right: 35px;
+
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+  top: 10px;
+}

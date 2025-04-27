@@ -1,7 +1,8 @@
 import React from "react";
 import PostCard from "./PostCard";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function CardList({ data, search, onClick, selectedPost }) {
+export default function CardList({ data, search }) {
   const filteredData = data?.filter((item) => {
     const query = search?.toLowerCase();
     const titleMatch = item.title.toLowerCase().includes(query);
@@ -10,11 +11,22 @@ export default function CardList({ data, search, onClick, selectedPost }) {
     );
     return titleMatch || tagsMatch;
   });
+
+  const navigate = useNavigate();
+
+  function handleSelect(id) {
+    navigate(`/${id}`);
+  }
+
   return (
     <>
-      {filteredData?.map((item) => (
-        <PostCard item={item} onClick={onClick} selectedPost={selectedPost} />
-      ))}
+      {filteredData.length === 0 ? (
+        <h5>Found no matching results</h5>
+      ) : (
+        filteredData?.map((item) => (
+          <PostCard item={item} key={item.id} onClick={handleSelect} />
+        ))
+      )}
     </>
   );
 }
