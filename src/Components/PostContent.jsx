@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../Components/PostContent.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function PostContent({ data }) {
   const { id } = useParams();
   const filteredItems = data.filter((item) => item.id === id);
+  const [showCloseButton, setShowCloseButton] = useState(false);
+
+  useEffect(() => {
+    if (id) {
+      setShowCloseButton(true);
+    } else {
+      setShowCloseButton(false);
+    }
+  }, [id]);
 
   const ContentCard = ({ item }) => {
     return (
@@ -23,14 +32,18 @@ export default function PostContent({ data }) {
 
   function closeContent() {
     navigate("/"); //removes the id from params
+    setShowCloseButton(false);
   }
 
   return (
     <div className={styles.contentContainer}>
       <div className="col-md-8">
-        <span className={styles.btnClose} onClick={closeContent}>
-          ❌
-        </span>
+        {showCloseButton && (
+          <span className={styles.btnClose} onClick={closeContent}>
+            ❌
+          </span>
+        )}
+
         {filteredItems.length === 0 && !id ? (
           <h6>Please use the search from the sidebar to search components.</h6>
         ) : (
