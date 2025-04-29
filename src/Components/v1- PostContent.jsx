@@ -4,27 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export default function PostContent({ data }) {
   const { id } = useParams();
+  const filteredItems = data.filter((item) => item.id === id);
   const [showCloseButton, setShowCloseButton] = useState(false);
-  const [post, setPost] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const filteredItems = data.filter((item) => Number(item.id) === Number(id));
-
-  useEffect(() => {
-    async function loadPost() {
-      const response = await fetch(
-        `http://local.components-library.com/wp-json/wp/v2/posts/${id}`
-      );
-      if (!response.ok) {
-        return;
-      }
-
-      const post = await response.json();
-      setPost(post);
-      setLoading(false);
-    }
-
-    loadPost();
-  }, [id]);
 
   useEffect(() => {
     if (id) {
@@ -32,13 +13,18 @@ export default function PostContent({ data }) {
     } else {
       setShowCloseButton(false);
     }
-  }, [id, data]);
+  }, [id]);
 
   const ContentCard = ({ item }) => {
     return (
       <div key={item.id}>
-        <h2>{item.title.rendered}</h2>
-        <div dangerouslySetInnerHTML={{ __html: item.content.rendered }}></div>
+        <h2>{item.title}</h2>
+        <ul>
+          {item.tags.map((tag) => (
+            <li key={tag}>{tag}</li>
+          ))}
+        </ul>
+        <div>{item.content}</div>
       </div>
     );
   };
@@ -58,14 +44,6 @@ export default function PostContent({ data }) {
           </span>
         )}
 
-        {/* Fetch by ID */}
-        {/* {loading ? (
-          <p>loading...</p>
-        ) : (
-          <ContentCard key={post.id} item={post} />
-        )} */}
-
-        {/* filter pre fetched data */}
         {filteredItems.length === 0 && !id ? (
           <h6>Please use the search from the sidebar to search components.</h6>
         ) : (

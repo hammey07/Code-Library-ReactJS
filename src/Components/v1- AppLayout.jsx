@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import data from "../data.json";
 import "../App.scss";
 import Sidebar from "./Sidebar";
@@ -9,27 +9,6 @@ import PostContent from "./PostContent";
 
 export default function AppLayout() {
   const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(true);
-
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    async function loadPosts() {
-      const response = await fetch(
-        "http://local.components-library.com/wp-json/wp/v2/posts"
-      );
-      if (!response.ok) {
-        console.log("Error fetching API data"); // oups! something went wrong
-        return;
-      }
-
-      const posts = await response.json();
-      // setPosts(posts);
-      setPosts(data);
-      setLoading(false);
-    }
-
-    loadPosts();
-  }, []);
 
   return (
     <div className="container-lg overflow-hidden">
@@ -42,15 +21,11 @@ export default function AppLayout() {
         <div className="col-md-4">
           <Sidebar>
             <Searchbar search={search} onSetSearch={setSearch}></Searchbar>
-            {loading ? (
-              <p>Loading...</p>
-            ) : (
-              <CardList data={posts} search={search} />
-            )}
+            <CardList data={data} search={search}></CardList>
           </Sidebar>
         </div>
         <div className="col-md-8">
-          {loading ? <p>Loading...</p> : <PostContent data={posts} />}
+          <PostContent data={data} />
         </div>
       </div>
       <TextContent>

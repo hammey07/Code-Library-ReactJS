@@ -5,12 +5,11 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function CardList({ data, search }) {
   const filteredData = data?.filter((item) => {
     const query = search?.toLowerCase();
-    const titleMatch = item.title.rendered.toLowerCase().includes(query);
-    // const tagsMatch = item.tags.some((tag) =>
-    //   tag.toLowerCase().includes(query)
-    // );
-    // return titleMatch || tagsMatch;
-    return titleMatch;
+    const titleMatch = item.title.toLowerCase().includes(query);
+    const tagsMatch = item.tags.some((tag) =>
+      tag.toLowerCase().includes(query)
+    );
+    return titleMatch || tagsMatch;
   });
 
   const navigate = useNavigate();

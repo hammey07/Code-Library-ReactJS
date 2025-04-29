@@ -23,7 +23,10 @@
   max-width: 80ch; /* limits to ~60 characters */
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines before truncating */
+  -webkit-box-orient: vertical;
+  white-space: normal; /* Allow text to wrap */
 }
 
 .arrow {

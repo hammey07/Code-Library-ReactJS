@@ -8,8 +8,12 @@ export default function PostCard({ item, onClick }) {
       className={`${styles.card} ${id === item.id ? styles.selected : ""}`}
       onClick={() => onClick(item.id)}
     >
-      <h5 className={styles.title}>{item.title}</h5>
-      <p className={styles.text}>{item.content}</p>
+      <h5 className={styles.title}>{item.title.rendered}</h5>
+      <div
+        className={styles.text}
+        dangerouslySetInnerHTML={{ __html: item.content.rendered }}
+      />
+
       <span className={styles.arrow}>➡️ </span>
     </div>
   );
