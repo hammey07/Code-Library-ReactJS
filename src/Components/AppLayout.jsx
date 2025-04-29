@@ -14,15 +14,15 @@ export default function AppLayout() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     async function loadPosts() {
-      const response = await fetch(
-        "http://local.components-library.com/wp-json/wp/v2/posts"
-      );
-      if (!response.ok) {
-        console.log("Error fetching API data"); // oups! something went wrong
-        return;
-      }
+      // const response = await fetch(
+      //   "http://local.components-library.com/wp-json/wp/v2/posts"
+      // );
+      // if (!response.ok) {
+      //   console.log("Error fetching API data"); // oups! something went wrong
+      //   return;
+      // }
 
-      const posts = await response.json();
+      // const posts = await response.json();
       // setPosts(posts);
       setPosts(data);
       setLoading(false);

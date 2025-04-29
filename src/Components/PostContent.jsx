@@ -9,22 +9,22 @@ export default function PostContent({ data }) {
   const [loading, setLoading] = useState(true);
   const filteredItems = data.filter((item) => Number(item.id) === Number(id));
 
-  useEffect(() => {
-    async function loadPost() {
-      const response = await fetch(
-        `http://local.components-library.com/wp-json/wp/v2/posts/${id}`
-      );
-      if (!response.ok) {
-        return;
-      }
+  // useEffect(() => {
+  //   async function loadPost() {
+  //     const response = await fetch(
+  //       `http://local.components-library.com/wp-json/wp/v2/posts/${id}`
+  //     );
+  //     if (!response.ok) {
+  //       return;
+  //     }
 
-      const post = await response.json();
-      setPost(post);
-      setLoading(false);
-    }
+  //     const post = await response.json();
+  //     setPost(post);
+  //     setLoading(false);
+  //   }
 
-    loadPost();
-  }, [id]);
+  //   loadPost();
+  // }, [id]);
 
   useEffect(() => {
     if (id) {
