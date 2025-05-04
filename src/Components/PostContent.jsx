@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../Components/PostContent.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
+import Loading from "./Loading";
 
 export default function PostContent({ data }) {
   const { id } = useParams();
@@ -60,7 +61,7 @@ export default function PostContent({ data }) {
 
         {/* Fetch by ID */}
         {/* {loading ? (
-          <p>loading...</p>
+          <Loading />
         ) : (
           <ContentCard key={post.id} item={post} />
         )} */}

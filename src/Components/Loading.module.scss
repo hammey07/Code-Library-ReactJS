@@ -1,0 +1,10 @@
+.card {
+  position: relative;
+  background-color: var(--secondary-color);
+  padding: 25px;
+  list-style-type: none;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border: 1px solid var(--secondary-color);
+  transition: 0.3s ease-in-out;
+}

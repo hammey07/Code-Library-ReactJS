@@ -1,0 +1,16 @@
+{
+  "data": {
+    "page": {
+      "content": "\n<p>👨🏽‍💻A simple React app to save and browse reusable component code snippets. Quickly search and view code examples to speed up your development🛠️ ⚙️.</p>\n\n\n\n<p></p>\n",
+      "title": "Homepage"
+    }
+  },
+  "extensions": {
+    "debug": [
+      {
+        "type": "DEBUG_LOGS_INACTIVE",
+        "message": "GraphQL Debug logging is not active. To see debug logs, GRAPHQL_DEBUG must be enabled."
+      }
+    ]
+  }
+}
