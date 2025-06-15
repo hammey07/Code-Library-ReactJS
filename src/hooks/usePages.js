@@ -8,35 +8,35 @@ export default function usePages(id) {
   const [error, setError] = useState(true);
   useEffect(() => {
     async function loadData() {
-      // if (!id) {
-      //   setError(true);
-      //   setPageLoading(false);
-      //   return;
-      // }
-      // const query = `
-      // query NewQuery {
-      //   page(id: ${id}, idType: DATABASE_ID) {
-      //   content
-      //   title
-      // }
-      // }`;
+      if (!id) {
+        setError(true);
+        setPageLoading(false);
+        return;
+      }
+      const query = `
+      query NewQuery {
+        page(id: ${id}, idType: DATABASE_ID) {
+        content
+        title
+      }
+      }`;
 
-      // const request = await fetch(
-      //   "http://local.components-library.com/graphql",
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({ query }),
-      //   }
-      // );
-      // if (!request) return;
-      // const response = await request.json();
-      // setPageData(response.data.page);
+      const request = await fetch(
+        "http://local.components-library.com/graphql",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ query }),
+        }
+      );
+      if (!request) return;
+      const response = await request.json();
+      setPageData(response.data.page);
 
       //COMMENT EVERYTHING ABOVE WITHIN LOAD DATA TO USE FAKE DATA
-      setPageData(dataPage.data.page);
+      // setPageData(dataPage.data.page);
       setPageLoading(false);
     }
 

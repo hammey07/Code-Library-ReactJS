@@ -52,27 +52,27 @@ export default function PostContent({ data }) {
 
   return (
     <div className={styles.contentContainer}>
-      <div className="col-md-8">
-        {showCloseButton && (
-          <span className={styles.btnClose} onClick={closeContent}>
-            ❌
-          </span>
-        )}
+      {/* <div className="col-md-8"> */}
+      {showCloseButton && (
+        <span className={styles.btnClose} onClick={closeContent}>
+          ❌
+        </span>
+      )}
 
-        {/* Fetch by ID */}
-        {/* {loading ? (
+      {/* Fetch by ID */}
+      {/* {loading ? (
           <Loading />
         ) : (
           <ContentCard key={post.id} item={post} />
         )} */}
 
-        {/* filter pre fetched data */}
-        {filteredItems.length === 0 && !id ? (
-          <h6>Please use the search from the sidebar to search components.</h6>
-        ) : (
-          filteredItems.map((item) => <ContentCard key={item.id} item={item} />)
-        )}
-      </div>
+      {/* filter pre fetched data */}
+      {filteredItems.length === 0 && !id ? (
+        <h6>Please use the search from the sidebar to search components.</h6>
+      ) : (
+        filteredItems.map((item) => <ContentCard key={item.id} item={item} />)
+      )}
+      {/* </div> */}
     </div>
   );
 }
